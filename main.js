@@ -6,12 +6,14 @@ window.addEventListener ("load", function() {
 
     else if (Notification.permission === "granted") {
       var notification = new Notification(msg);
+      notificationAudio.play();
     }
 
     else if (Notification.permission !== 'denied') {
       Notification.requestPermission(function (permission) {
         if (permission === "granted") {
           var notification = new Notification(msg);
+          notificationAudio.play();
         }
       });
     }
@@ -31,7 +33,6 @@ window.addEventListener ("load", function() {
         } else if (src.match(/\/images\/.*\/.*149.*\.png/g) != null) {
           notify('發現快龍！!')
         }
-        notificationAudio.play();
     });
     $('#updatespan').click();
   }, 60000);
