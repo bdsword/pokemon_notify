@@ -17,21 +17,22 @@ window.addEventListener ("load", function() {
     }
   }
 
+  var notificationAudio = new Audio();
+  notificationAudio.src = "https://raw.githubusercontent.com/bdsword/pokemon_notify/master/notification.mp3";
+
   setInterval(function() {
     $('img.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive').each(function(e){
         $this = $(this);
         src = $this.attr('src');
-        if (src.match(/\/images\/.*\/.*147.*\.png/g) != null){
-        	notify('找到高IV迷你龍')
-        } else if (src.match(/\/images\/.*\/.*148.*\.png/g) != null) {
-          notify('找到高IV哈克龍')
+        if (src.match(/\/images\/.*\/.*147_.*\.png/g) != null){
+        	notify('發現高IV迷你龍')
+        } else if (src.match(/\/images\/.*\/.*148_.*\.png/g) != null) {
+          notify('發現高IV哈克龍')
         } else if (src.match(/\/images\/.*\/.*149.*\.png/g) != null) {
-          notify('找到快龍了！')
+          notify('發現快龍！!')
         }
-        var notificationAudio = new Audio();        // create the audio object
-        notificationAudio.src = "./notification.mp3"; // assign the audio file to it
         notificationAudio.play();
     });
     $('#updatespan').click();
-  }, 5000);
+  }, 60000);
 }, false);
