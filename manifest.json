@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "寶可夢通知器",
+  "description": "通知你特定寶可夢已出現",
+  "version": "0.0.1",
+  "icons" :{
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background":
+  {
+      "scripts": ["jquery-3.1.1.min.js"]
+  },
+  "permissions": ["tabs", "notifications", "*://pkget.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://pkget.com/*"],
+      "js": ["jquery-3.1.1.min.js", "main.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
