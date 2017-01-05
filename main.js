@@ -162,14 +162,14 @@ window.addEventListener ("load", function() {
         $this = $(this);
         src = $this.attr('src');
         style = $this.attr('style');
-        if (src.match(/\/images.*147.*\.png/g) != null){
+        if (src.match(/\/images.*147_.*\.png/g) != null){
         	notify(sha1(style), '發現高IV迷你龍', 'https://pkget.com' + src)
-        } else if (src.match(/\/images.*148.*\.png/g) != null) {
+        } else if (src.match(/\/images.*148_.*\.png/g) != null) {
           notify(sha1(style), '發現高IV哈克龍', 'https://pkget.com' + src)
         } else if (src.match(/\/images.*149.*\.png/g) != null) {
           notify(sha1(style), '發現快龍！!', 'https://pkget.com' + src)
         }
     });
     $('#updatespan').click();
-  }, 6000);
+  }, 60000);
 }, false);
