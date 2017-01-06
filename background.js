@@ -22,6 +22,7 @@ chrome.notifications.onButtonClicked.addListener(function callback(id){
       var regex = /Pokemon Notifications (.*)/g;
       uid = regex.exec(id)[1];
       result[0].responser({id: uid});
+      chrome.notifications.clear(id);
     }
   }
 });
